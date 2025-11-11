@@ -1,0 +1,21 @@
+Command: ninja all
+[1/12] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.5.1/projects/fire_detector/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building C object esp-idf/sensor/CMakeFiles/__idf_sensor.dir/sensor.c.obj
+[5/12] Linking C static library esp-idf\sensor\libsensor.a
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/fire_detector.c.obj
+[7/12] Linking C static library esp-idf\main\libmain.a
+[8/12] Generating esp-idf/esp_system/ld/sections.ld
+[9/12] Building C object CMakeFiles/fire_detector.elf.dir/project_elf_src_esp32.c.obj
+[10/12] Linking CXX executable fire_detector.elf
+[11/12] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Espressif/frameworks/esp-idf-v5.5.1/projects/fire_detector/build/fire_detector.bin
+[12/12] C:\Windows\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.5.1/projects/fire_detector/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.5.1/projects/fire_detector/build/fire_detector.bin"
+fire_detector.bin binary size 0x2ed60 bytes. Smallest app partition is 0x100000 bytes. 0xd12a0 bytes (82%) free.

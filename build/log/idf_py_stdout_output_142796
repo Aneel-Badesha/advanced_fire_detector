@@ -1,0 +1,110 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\fire_detector.elf C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 10 2025 12:16:19[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a128h ( 41256) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a150 vaddr=3ffb0000 size=023d8h (  9176) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001c530 vaddr=40080000 size=03ae8h ( 15080) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=147e8h ( 83944) map[0m
+[0;32mI (142) esp_image: segment 4: paddr=00034810 vaddr=40083ae8 size=094c8h ( 38088) load[0m
+[0;32mI (157) esp_image: segment 5: paddr=0003dce0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (164) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Multicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     fire_detector[0m
+[0;32mI (188) app_init: App version:      v5.5.1[0m
+[0;32mI (192) app_init: Compile time:     Nov 10 2025 12:16:05[0m
+[0;32mI (197) app_init: ELF file SHA256:  f5c3faeaa...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (209) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (213) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (217) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (223) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFB2CC8 len 0002D338 (180 KiB): DRAM[0m
+[0;32mI (234) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 4008CFB0 len 00013050 (76 KiB): IRAM[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (253) spi_flash: flash io: dio[0m
+[0;33mW (256) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (269) main_task: Started on CPU0[0m
+[0;32mI (279) main_task: Calling app_main()[0m
+[0;32mI (279) fire_detector: Fire Detector System Starting...[0m
+[0;32mI (279) fire_detector: System initialized successfully[0m
+[0;32mI (279) fire_detector: Starting ADC read task (joystick on GPIO34/35)[0m
+[0;32mI (289) SENSOR: ADC1 unit initialized[0m
+[0;32mI (289) SENSOR: ADC1 calibration enabled[0m
+[0;32mI (289) FLAME SENSOR: flame: 1583.0%[0m
+[0;32mI (299) TEMP SENSOR: temp: 785.0%[0m
+[0;32mI (499) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (499) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (699) FLAME SENSOR: flame: 80.0%[0m
+[0;32mI (699) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (899) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (899) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (1099) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (1099) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (1299) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (1299) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (1499) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (1499) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (1699) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (1699) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (1899) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (1899) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (2099) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (2099) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (2299) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (2299) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (2499) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (2499) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (2699) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (2699) TEMP SENSOR: temp: 128.0%[0m
+[0;32mI (2899) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (2899) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (3099) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (3099) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (3299) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (3299) TEMP SENSOR: temp: 192.0%[0m
+[0;32mI (3499) FLAME SENSOR: flame: 288.0%[0m
+[0;32mI (3499) TEMP SENSOR: temp: 512.0%[0m
+[0;32mI (3699) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (3699) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (3899) FLAME SENSOR: flame: 128.0%[0m
+[0;32mI (3899) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (4099) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (4099) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (4299) FLAME SENSOR: flame: 336.0%[0m
+[0;32mI (4299) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (4499) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (4499) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (4699) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (4699) TEMP SENSOR: temp: 0.0%[0m
+[0;32mI (4899) FLAME SENSOR: flame: 0.0%[0m
+[0;32mI (4899) TEMP SENSOR: temp: 0.0%[0m

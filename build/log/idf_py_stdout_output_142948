@@ -1,0 +1,191 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\fire_detector.elf C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 10 2025 12:16:19[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a250h ( 41552) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a278 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001c678 vaddr=40080000 size=039a0h ( 14752) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14d9ch ( 85404) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00034dc4 vaddr=400839a0 size=09610h ( 38416) load[0m
+[0;32mI (158) esp_image: segment 5: paddr=0003e3dc vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (165) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Multicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (185) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) app_init: Application information:[0m
+[0;32mI (185) app_init: Project name:     fire_detector[0m
+[0;32mI (189) app_init: App version:      v5.5.1[0m
+[0;32mI (193) app_init: Compile time:     Nov 10 2025 12:16:05[0m
+[0;32mI (198) app_init: ELF file SHA256:  e8c7a542a...[0m
+[0;32mI (202) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (206) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (210) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (214) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (218) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (224) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 3FFB2CE0 len 0002D320 (180 KiB): DRAM[0m
+[0;32mI (234) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (240) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 4008CFB0 len 00013050 (76 KiB): IRAM[0m
+[0;32mI (252) spi_flash: detected chip: generic[0m
+[0;32mI (254) spi_flash: flash io: dio[0m
+[0;33mW (257) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (280) fire_detector: Fire Detector System Starting...[0m
+[0;32mI (280) fire_detector: System initialized successfully[0m
+[0;32mI (280) SENSOR: Starting sensor read task[0m
+[0;32mI (280) SENSOR: ADC1 unit initialized[0m
+[0;32mI (290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (1290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (2290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (3290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (4290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (5290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (6290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (7290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (8290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (9290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (10290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (11290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (12290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (13290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (14290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (15290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (16290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (17290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (18290) flame sensor: Flame Intensity: 100[0m
+[0;32mI (19290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (20290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (21290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (22290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (23290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (24290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (25290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (26290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (27290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (28290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (29290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (30290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (31290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (32290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (33290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (34290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (35290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (36290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (37290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (38290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (39290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (40290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (41290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (42290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (43290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (44290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (45290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (46290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (47290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (48290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (49290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (50290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (51290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (52290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (53290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (54290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (55290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (56290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (57290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (58290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (59290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (60290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (61290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (62290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (63290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (64290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (65290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (66290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (67290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (68290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (69290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (70290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (71290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (72290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (73290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (74290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (75290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (76290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (77290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (78290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (79290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (80290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (81290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (82290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (83290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (84290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (85290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (86290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (87290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (88290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (89290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (90290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (91290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (92290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (93290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (94290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (95290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (96290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (97290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (98290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (99290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (100290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (101290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (102290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (103290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (104290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (105290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (106290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (107290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (108290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (109290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (110290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (111290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (112290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (113290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (114290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (115290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (116290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (117290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (118290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (119290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (120290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (121290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (122290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (123290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (124290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (125290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (126290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (127290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (128290) flame sensor: Flame Intensity: 0[0m
+[0;32mI (129290) flame sensor: Flame Intensity: 0[0m

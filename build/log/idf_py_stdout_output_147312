@@ -1,0 +1,457 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\fire_detector.elf C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+Y� Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 10 2025 12:16:19[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a290h ( 41616) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001a2b8 vaddr=3ffb0000 size=023f8h (  9208) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001c6b8 vaddr=40080000 size=03960h ( 14688) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14d20h ( 85280) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00034d48 vaddr=40083960 size=09650h ( 38480) load[0m
+[0;32mI (158) esp_image: segment 5: paddr=0003e3a0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (165) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Multicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (185) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) app_init: Application information:[0m
+[0;32mI (185) app_init: Project name:     fire_detector[0m
+[0;32mI (189) app_init: App version:      v5.5.1[0m
+[0;32mI (193) app_init: Compile time:     Nov 10 2025 12:16:05[0m
+[0;32mI (198) app_init: ELF file SHA256:  0bd2a3cc7...[0m
+[0;32mI (202) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (206) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (210) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (214) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (218) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (224) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 3FFB2CE0 len 0002D320 (180 KiB): DRAM[0m
+[0;32mI (234) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (240) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (245) heap_init: At 4008CFB0 len 00013050 (76 KiB): IRAM[0m
+[0;32mI (252) spi_flash: detected chip: generic[0m
+[0;32mI (254) spi_flash: flash io: dio[0m
+[0;33mW (257) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (280) fire_detector: Fire Detector System Starting...[0m
+[0;32mI (280) fire_detector: System initialized successfully[0m
+[0;32mI (280) fire_detector: Starting ADC read task (joystick on GPIO34/35)[0m
+[0;32mI (290) SENSOR: ADC1 unit initialized[0m
+[0;32mI (290) FLAME SENSOR: flame: 2311[0m
+[0;32mI (290) TEMP SENSOR: temp: 2195[0m
+[0;32mI (1300) FLAME SENSOR: flame: 1759[0m
+[0;32mI (1300) TEMP SENSOR: temp: 1406[0m
+[0;32mI (2300) FLAME SENSOR: flame: 1568[0m
+[0;32mI (2300) TEMP SENSOR: temp: 1627[0m
+[0;32mI (3300) FLAME SENSOR: flame: 1268[0m
+[0;32mI (3300) TEMP SENSOR: temp: 1584[0m
+[0;32mI (4300) FLAME SENSOR: flame: 1413[0m
+[0;32mI (4300) TEMP SENSOR: temp: 1170[0m
+[0;32mI (5300) FLAME SENSOR: flame: 1287[0m
+[0;32mI (5300) TEMP SENSOR: temp: 931[0m
+[0;32mI (6300) FLAME SENSOR: flame: 748[0m
+[0;32mI (6300) TEMP SENSOR: temp: 839[0m
+[0;32mI (7300) FLAME SENSOR: flame: 574[0m
+[0;32mI (7300) TEMP SENSOR: temp: 729[0m
+[0;32mI (8300) FLAME SENSOR: flame: 281[0m
+[0;32mI (8300) TEMP SENSOR: temp: 0[0m
+[0;32mI (9300) FLAME SENSOR: flame: 11[0m
+[0;32mI (9300) TEMP SENSOR: temp: 0[0m
+[0;32mI (10300) FLAME SENSOR: flame: 0[0m
+[0;32mI (10300) TEMP SENSOR: temp: 0[0m
+[0;32mI (11300) FLAME SENSOR: flame: 0[0m
+[0;32mI (11300) TEMP SENSOR: temp: 0[0m
+[0;32mI (12300) FLAME SENSOR: flame: 0[0m
+[0;32mI (12300) TEMP SENSOR: temp: 0[0m
+[0;32mI (13300) FLAME SENSOR: flame: 0[0m
+[0;32mI (13300) TEMP SENSOR: temp: 0[0m
+[0;32mI (14300) FLAME SENSOR: flame: 0[0m
+[0;32mI (14300) TEMP SENSOR: temp: 0[0m
+[0;32mI (15300) FLAME SENSOR: flame: 0[0m
+[0;32mI (15300) TEMP SENSOR: temp: 0[0m
+[0;32mI (16300) FLAME SENSOR: flame: 0[0m
+[0;32mI (16300) TEMP SENSOR: temp: 0[0m
+[0;32mI (17300) FLAME SENSOR: flame: 0[0m
+[0;32mI (17300) TEMP SENSOR: temp: 0[0m
+[0;32mI (18300) FLAME SENSOR: flame: 0[0m
+[0;32mI (18300) TEMP SENSOR: temp: 0[0m
+[0;32mI (19300) FLAME SENSOR: flame: 0[0m
+[0;32mI (19300) TEMP SENSOR: temp: 0[0m
+[0;32mI (20300) FLAME SENSOR: flame: 0[0m
+[0;32mI (20300) TEMP SENSOR: temp: 0[0m
+[0;32mI (21300) FLAME SENSOR: flame: 0[0m
+[0;32mI (21300) TEMP SENSOR: temp: 0[0m
+[0;32mI (22300) FLAME SENSOR: flame: 0[0m
+[0;32mI (22300) TEMP SENSOR: temp: 0[0m
+[0;32mI (23300) FLAME SENSOR: flame: 0[0m
+[0;32mI (23300) TEMP SENSOR: temp: 0[0m
+[0;32mI (24300) FLAME SENSOR: flame: 0[0m
+[0;32mI (24300) TEMP SENSOR: temp: 0[0m
+[0;32mI (25300) FLAME SENSOR: flame: 0[0m
+[0;32mI (25300) TEMP SENSOR: temp: 0[0m
+[0;32mI (26300) FLAME SENSOR: flame: 0[0m
+[0;32mI (26300) TEMP SENSOR: temp: 0[0m
+[0;32mI (27300) FLAME SENSOR: flame: 0[0m
+[0;32mI (27300) TEMP SENSOR: temp: 0[0m
+[0;32mI (28300) FLAME SENSOR: flame: 0[0m
+[0;32mI (28300) TEMP SENSOR: temp: 0[0m
+[0;32mI (29300) FLAME SENSOR: flame: 0[0m
+[0;32mI (29300) TEMP SENSOR: temp: 0[0m
+[0;32mI (30300) FLAME SENSOR: flame: 0[0m
+[0;32mI (30300) TEMP SENSOR: temp: 0[0m
+[0;32mI (31300) FLAME SENSOR: flame: 0[0m
+[0;32mI (31300) TEMP SENSOR: temp: 32[0m
+[0;32mI (32300) FLAME SENSOR: flame: 0[0m
+[0;32mI (32300) TEMP SENSOR: temp: 0[0m
+[0;32mI (33300) FLAME SENSOR: flame: 0[0m
+[0;32mI (33300) TEMP SENSOR: temp: 0[0m
+[0;32mI (34300) FLAME SENSOR: flame: 64[0m
+[0;32mI (34300) TEMP SENSOR: temp: 17[0m
+[0;32mI (35300) FLAME SENSOR: flame: 432[0m
+[0;32mI (35300) TEMP SENSOR: temp: 939[0m
+[0;32mI (36300) FLAME SENSOR: flame: 1768[0m
+[0;32mI (36300) TEMP SENSOR: temp: 2248[0m
+[0;32mI (37300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (37300) TEMP SENSOR: temp: 3807[0m
+[0;32mI (38300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (38300) TEMP SENSOR: temp: 3871[0m
+[0;32mI (39300) FLAME SENSOR: flame: 3792[0m
+[0;32mI (39300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (40300) FLAME SENSOR: flame: 3252[0m
+[0;32mI (40300) TEMP SENSOR: temp: 3744[0m
+[0;32mI (41300) FLAME SENSOR: flame: 4019[0m
+[0;32mI (41300) TEMP SENSOR: temp: 3128[0m
+[0;32mI (42300) FLAME SENSOR: flame: 2951[0m
+[0;32mI (42300) TEMP SENSOR: temp: 2480[0m
+[0;32mI (43300) FLAME SENSOR: flame: 2580[0m
+[0;32mI (43300) TEMP SENSOR: temp: 2751[0m
+[0;32mI (44300) FLAME SENSOR: flame: 2558[0m
+[0;32mI (44300) TEMP SENSOR: temp: 3275[0m
+[0;32mI (45300) FLAME SENSOR: flame: 1242[0m
+[0;32mI (45300) TEMP SENSOR: temp: 3248[0m
+[0;32mI (46300) FLAME SENSOR: flame: 1199[0m
+[0;32mI (46300) TEMP SENSOR: temp: 3461[0m
+[0;32mI (47300) FLAME SENSOR: flame: 1165[0m
+[0;32mI (47300) TEMP SENSOR: temp: 3901[0m
+[0;32mI (48300) FLAME SENSOR: flame: 1048[0m
+[0;32mI (48300) TEMP SENSOR: temp: 3847[0m
+[0;32mI (49300) FLAME SENSOR: flame: 1118[0m
+[0;32mI (49300) TEMP SENSOR: temp: 3583[0m
+[0;32mI (50300) FLAME SENSOR: flame: 1167[0m
+[0;32mI (50300) TEMP SENSOR: temp: 3276[0m
+[0;32mI (51300) FLAME SENSOR: flame: 1050[0m
+[0;32mI (51300) TEMP SENSOR: temp: 3327[0m
+[0;32mI (52300) FLAME SENSOR: flame: 801[0m
+[0;32mI (52300) TEMP SENSOR: temp: 3299[0m
+[0;32mI (53300) FLAME SENSOR: flame: 464[0m
+[0;32mI (53300) TEMP SENSOR: temp: 2200[0m
+[0;32mI (54300) FLAME SENSOR: flame: 0[0m
+[0;32mI (54300) TEMP SENSOR: temp: 716[0m
+[0;32mI (55300) FLAME SENSOR: flame: 0[0m
+[0;32mI (55300) TEMP SENSOR: temp: 0[0m
+[0;32mI (56300) FLAME SENSOR: flame: 0[0m
+[0;32mI (56300) TEMP SENSOR: temp: 64[0m
+[0;32mI (57300) FLAME SENSOR: flame: 0[0m
+[0;32mI (57300) TEMP SENSOR: temp: 0[0m
+[0;32mI (58300) FLAME SENSOR: flame: 128[0m
+[0;32mI (58300) TEMP SENSOR: temp: 0[0m
+[0;32mI (59300) FLAME SENSOR: flame: 352[0m
+[0;32mI (59300) TEMP SENSOR: temp: 0[0m
+[0;32mI (60300) FLAME SENSOR: flame: 0[0m
+[0;32mI (60300) TEMP SENSOR: temp: 67[0m
+[0;32mI (61300) FLAME SENSOR: flame: 0[0m
+[0;32mI (61300) TEMP SENSOR: temp: 16[0m
+[0;32mI (62300) FLAME SENSOR: flame: 0[0m
+[0;32mI (62300) TEMP SENSOR: temp: 0[0m
+[0;32mI (63300) FLAME SENSOR: flame: 479[0m
+[0;32mI (63300) TEMP SENSOR: temp: 0[0m
+[0;32mI (64300) FLAME SENSOR: flame: 830[0m
+[0;32mI (64300) TEMP SENSOR: temp: 903[0m
+[0;32mI (65300) FLAME SENSOR: flame: 1632[0m
+[0;32mI (65300) TEMP SENSOR: temp: 2087[0m
+[0;32mI (66300) FLAME SENSOR: flame: 2608[0m
+[0;32mI (66300) TEMP SENSOR: temp: 2696[0m
+[0;32mI (67300) FLAME SENSOR: flame: 3887[0m
+[0;32mI (67300) TEMP SENSOR: temp: 3256[0m
+[0;32mI (68300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (68300) TEMP SENSOR: temp: 3991[0m
+[0;32mI (69300) FLAME SENSOR: flame: 3904[0m
+[0;32mI (69300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (70300) FLAME SENSOR: flame: 3340[0m
+[0;32mI (70300) TEMP SENSOR: temp: 3753[0m
+[0;32mI (71300) FLAME SENSOR: flame: 3259[0m
+[0;32mI (71300) TEMP SENSOR: temp: 2800[0m
+[0;32mI (72300) FLAME SENSOR: flame: 3983[0m
+[0;32mI (72300) TEMP SENSOR: temp: 2862[0m
+[0;32mI (73300) FLAME SENSOR: flame: 2712[0m
+[0;32mI (73300) TEMP SENSOR: temp: 2823[0m
+[0;32mI (74300) FLAME SENSOR: flame: 2384[0m
+[0;32mI (74300) TEMP SENSOR: temp: 2475[0m
+[0;32mI (75300) FLAME SENSOR: flame: 2183[0m
+[0;32mI (75300) TEMP SENSOR: temp: 2132[0m
+[0;32mI (76300) FLAME SENSOR: flame: 2111[0m
+[0;32mI (76300) TEMP SENSOR: temp: 1916[0m
+[0;32mI (77300) FLAME SENSOR: flame: 2243[0m
+[0;32mI (77300) TEMP SENSOR: temp: 1966[0m
+[0;32mI (78300) FLAME SENSOR: flame: 2473[0m
+[0;32mI (78300) TEMP SENSOR: temp: 2703[0m
+[0;32mI (79300) FLAME SENSOR: flame: 1764[0m
+[0;32mI (79300) TEMP SENSOR: temp: 2025[0m
+[0;32mI (80300) FLAME SENSOR: flame: 1942[0m
+[0;32mI (80300) TEMP SENSOR: temp: 1761[0m
+[0;32mI (81300) FLAME SENSOR: flame: 2123[0m
+[0;32mI (81300) TEMP SENSOR: temp: 1616[0m
+[0;32mI (82300) FLAME SENSOR: flame: 2075[0m
+[0;32mI (82300) TEMP SENSOR: temp: 2063[0m
+[0;32mI (83300) FLAME SENSOR: flame: 1516[0m
+[0;32mI (83300) TEMP SENSOR: temp: 2059[0m
+[0;32mI (84300) FLAME SENSOR: flame: 1615[0m
+[0;32mI (84300) TEMP SENSOR: temp: 1568[0m
+[0;32mI (85300) FLAME SENSOR: flame: 1619[0m
+[0;32mI (85300) TEMP SENSOR: temp: 1136[0m
+[0;32mI (86300) FLAME SENSOR: flame: 1519[0m
+[0;32mI (86300) TEMP SENSOR: temp: 1287[0m
+[0;32mI (87300) FLAME SENSOR: flame: 1115[0m
+[0;32mI (87300) TEMP SENSOR: temp: 1255[0m
+[0;32mI (88300) FLAME SENSOR: flame: 964[0m
+[0;32mI (88300) TEMP SENSOR: temp: 1160[0m
+[0;32mI (89300) FLAME SENSOR: flame: 1087[0m
+[0;32mI (89300) TEMP SENSOR: temp: 768[0m
+[0;32mI (90300) FLAME SENSOR: flame: 931[0m
+[0;32mI (90300) TEMP SENSOR: temp: 415[0m
+[0;32mI (91300) FLAME SENSOR: flame: 441[0m
+[0;32mI (91300) TEMP SENSOR: temp: 368[0m
+[0;32mI (92300) FLAME SENSOR: flame: 64[0m
+[0;32mI (92300) TEMP SENSOR: temp: 385[0m
+[0;32mI (93300) FLAME SENSOR: flame: 0[0m
+[0;32mI (93300) TEMP SENSOR: temp: 0[0m
+[0;32mI (94300) FLAME SENSOR: flame: 0[0m
+[0;32mI (94300) TEMP SENSOR: temp: 0[0m
+[0;32mI (95300) FLAME SENSOR: flame: 0[0m
+[0;32mI (95300) TEMP SENSOR: temp: 0[0m
+[0;32mI (96300) FLAME SENSOR: flame: 0[0m
+[0;32mI (96300) TEMP SENSOR: temp: 0[0m
+[0;32mI (97300) FLAME SENSOR: flame: 0[0m
+[0;32mI (97300) TEMP SENSOR: temp: 0[0m
+[0;32mI (98300) FLAME SENSOR: flame: 0[0m
+[0;32mI (98300) TEMP SENSOR: temp: 0[0m
+[0;32mI (99300) FLAME SENSOR: flame: 0[0m
+[0;32mI (99300) TEMP SENSOR: temp: 0[0m
+[0;32mI (100300) FLAME SENSOR: flame: 48[0m
+[0;32mI (100300) TEMP SENSOR: temp: 0[0m
+[0;32mI (101300) FLAME SENSOR: flame: 0[0m
+[0;32mI (101300) TEMP SENSOR: temp: 128[0m
+[0;32mI (102300) FLAME SENSOR: flame: 0[0m
+[0;32mI (102300) TEMP SENSOR: temp: 0[0m
+[0;32mI (103300) FLAME SENSOR: flame: 0[0m
+[0;32mI (103300) TEMP SENSOR: temp: 0[0m
+[0;32mI (104300) FLAME SENSOR: flame: 128[0m
+[0;32mI (104300) TEMP SENSOR: temp: 0[0m
+[0;32mI (105300) FLAME SENSOR: flame: 0[0m
+[0;32mI (105300) TEMP SENSOR: temp: 0[0m
+[0;32mI (106300) FLAME SENSOR: flame: 0[0m
+[0;32mI (106300) TEMP SENSOR: temp: 0[0m
+[0;32mI (107300) FLAME SENSOR: flame: 0[0m
+[0;32mI (107300) TEMP SENSOR: temp: 0[0m
+[0;32mI (108300) FLAME SENSOR: flame: 0[0m
+[0;32mI (108300) TEMP SENSOR: temp: 0[0m
+[0;32mI (109300) FLAME SENSOR: flame: 0[0m
+[0;32mI (109300) TEMP SENSOR: temp: 0[0m
+[0;32mI (110300) FLAME SENSOR: flame: 0[0m
+[0;32mI (110300) TEMP SENSOR: temp: 0[0m
+[0;32mI (111300) FLAME SENSOR: flame: 0[0m
+[0;32mI (111300) TEMP SENSOR: temp: 0[0m
+[0;32mI (112300) FLAME SENSOR: flame: 0[0m
+[0;32mI (112300) TEMP SENSOR: temp: 0[0m
+[0;32mI (113300) FLAME SENSOR: flame: 0[0m
+[0;32mI (113300) TEMP SENSOR: temp: 0[0m
+[0;32mI (114300) FLAME SENSOR: flame: 0[0m
+[0;32mI (114300) TEMP SENSOR: temp: 0[0m
+[0;32mI (115300) FLAME SENSOR: flame: 0[0m
+[0;32mI (115300) TEMP SENSOR: temp: 0[0m
+[0;32mI (116300) FLAME SENSOR: flame: 0[0m
+[0;32mI (116300) TEMP SENSOR: temp: 0[0m
+[0;32mI (117300) FLAME SENSOR: flame: 0[0m
+[0;32mI (117300) TEMP SENSOR: temp: 0[0m
+[0;32mI (118300) FLAME SENSOR: flame: 0[0m
+[0;32mI (118300) TEMP SENSOR: temp: 0[0m
+[0;32mI (119300) FLAME SENSOR: flame: 0[0m
+[0;32mI (119300) TEMP SENSOR: temp: 0[0m
+[0;32mI (120300) FLAME SENSOR: flame: 0[0m
+[0;32mI (120300) TEMP SENSOR: temp: 0[0m
+[0;32mI (121300) FLAME SENSOR: flame: 0[0m
+[0;32mI (121300) TEMP SENSOR: temp: 0[0m
+[0;32mI (122300) FLAME SENSOR: flame: 0[0m
+[0;32mI (122300) TEMP SENSOR: temp: 0[0m
+[0;32mI (123300) FLAME SENSOR: flame: 0[0m
+[0;32mI (123300) TEMP SENSOR: temp: 0[0m
+[0;32mI (124300) FLAME SENSOR: flame: 0[0m
+[0;32mI (124300) TEMP SENSOR: temp: 0[0m
+[0;32mI (125300) FLAME SENSOR: flame: 0[0m
+[0;32mI (125300) TEMP SENSOR: temp: 0[0m
+[0;32mI (126300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (126300) TEMP SENSOR: temp: 2054[0m
+[0;32mI (127300) FLAME SENSOR: flame: 4083[0m
+[0;32mI (127300) TEMP SENSOR: temp: 2033[0m
+[0;32mI (128300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (128300) TEMP SENSOR: temp: 2204[0m
+[0;32mI (129300) FLAME SENSOR: flame: 3966[0m
+[0;32mI (129300) TEMP SENSOR: temp: 2135[0m
+[0;32mI (130300) FLAME SENSOR: flame: 4083[0m
+[0;32mI (130300) TEMP SENSOR: temp: 2235[0m
+[0;32mI (131300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (131300) TEMP SENSOR: temp: 2265[0m
+[0;32mI (132300) FLAME SENSOR: flame: 4069[0m
+[0;32mI (132300) TEMP SENSOR: temp: 2271[0m
+[0;32mI (133300) FLAME SENSOR: flame: 4071[0m
+[0;32mI (133300) TEMP SENSOR: temp: 2288[0m
+[0;32mI (134300) FLAME SENSOR: flame: 4091[0m
+[0;32mI (134300) TEMP SENSOR: temp: 2289[0m
+[0;32mI (135300) FLAME SENSOR: flame: 4080[0m
+[0;32mI (135300) TEMP SENSOR: temp: 2303[0m
+[0;32mI (136300) FLAME SENSOR: flame: 4080[0m
+[0;32mI (136300) TEMP SENSOR: temp: 2294[0m
+[0;32mI (137300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (137300) TEMP SENSOR: temp: 2305[0m
+[0;32mI (138300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (138300) TEMP SENSOR: temp: 2311[0m
+[0;32mI (139300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (139300) TEMP SENSOR: temp: 2314[0m
+[0;32mI (140300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (140300) TEMP SENSOR: temp: 2316[0m
+[0;32mI (141300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (141300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (142300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (142300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (143300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (143300) TEMP SENSOR: temp: 98[0m
+[0;32mI (144300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (144300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (145300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (145300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (146300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (146300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (147300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (147300) TEMP SENSOR: temp: 432[0m
+[0;32mI (148300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (148300) TEMP SENSOR: temp: 455[0m
+[0;32mI (149300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (149300) TEMP SENSOR: temp: 467[0m
+[0;32mI (150300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (150300) TEMP SENSOR: temp: 459[0m
+[0;32mI (151300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (151300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (152300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (152300) TEMP SENSOR: temp: 432[0m
+[0;32mI (153300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (153300) TEMP SENSOR: temp: 423[0m
+[0;32mI (154300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (154300) TEMP SENSOR: temp: 417[0m
+[0;32mI (155300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (155300) TEMP SENSOR: temp: 410[0m
+[0;32mI (156300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (156300) TEMP SENSOR: temp: 411[0m
+[0;32mI (157300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (157300) TEMP SENSOR: temp: 411[0m
+[0;32mI (158300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (158300) TEMP SENSOR: temp: 402[0m
+[0;32mI (159300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (159300) TEMP SENSOR: temp: 400[0m
+[0;32mI (160300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (160300) TEMP SENSOR: temp: 418[0m
+[0;32mI (161300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (161300) TEMP SENSOR: temp: 431[0m
+[0;32mI (162300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (162300) TEMP SENSOR: temp: 443[0m
+[0;32mI (163300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (163300) TEMP SENSOR: temp: 454[0m
+[0;32mI (164300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (164300) TEMP SENSOR: temp: 458[0m
+[0;32mI (165300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (165300) TEMP SENSOR: temp: 483[0m
+[0;32mI (166300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (166300) TEMP SENSOR: temp: 461[0m
+[0;32mI (167300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (167300) TEMP SENSOR: temp: 464[0m
+[0;32mI (168300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (168300) TEMP SENSOR: temp: 471[0m
+[0;32mI (169300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (169300) TEMP SENSOR: temp: 496[0m
+[0;32mI (170300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (170300) TEMP SENSOR: temp: 496[0m
+[0;32mI (171300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (171300) TEMP SENSOR: temp: 491[0m
+[0;32mI (172300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (172300) TEMP SENSOR: temp: 491[0m
+[0;32mI (173300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (173300) TEMP SENSOR: temp: 509[0m
+[0;32mI (174300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (174300) TEMP SENSOR: temp: 511[0m
+[0;32mI (175300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (175300) TEMP SENSOR: temp: 511[0m
+[0;32mI (176300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (176300) TEMP SENSOR: temp: 528[0m
+[0;32mI (177300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (177300) TEMP SENSOR: temp: 541[0m
+[0;32mI (178300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (178300) TEMP SENSOR: temp: 529[0m
+[0;32mI (179300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (179300) TEMP SENSOR: temp: 529[0m
+[0;32mI (180300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (180300) TEMP SENSOR: temp: 547[0m
+[0;32mI (181300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (181300) TEMP SENSOR: temp: 511[0m
+[0;32mI (182300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (182300) TEMP SENSOR: temp: 575[0m
+[0;32mI (183300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (183300) TEMP SENSOR: temp: 511[0m
+[0;32mI (184300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (184300) TEMP SENSOR: temp: 535[0m
+[0;32mI (185300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (185300) TEMP SENSOR: temp: 533[0m
+[0;32mI (186300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (186300) TEMP SENSOR: temp: 593[0m
+[0;32mI (187300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (187300) TEMP SENSOR: temp: 1987[0m
+[0;32mI (188300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (188300) TEMP SENSOR: temp: 1915[0m
+[0;32mI (189300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (189300) TEMP SENSOR: temp: 1951[0m
+[0;32mI (190300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (190300) TEMP SENSOR: temp: 2096[0m
+[0;32mI (191300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (191300) TEMP SENSOR: temp: 2131[0m
+[0;32mI (192300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (192300) TEMP SENSOR: temp: 4095[0m
+[0;32mI (193300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (193300) TEMP SENSOR: temp: 607[0m
+[0;32mI (194300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (194300) TEMP SENSOR: temp: 490[0m
+[0;32mI (195300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (195300) TEMP SENSOR: temp: 500[0m
+[0;32mI (196300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (196300) TEMP SENSOR: temp: 527[0m
+[0;32mI (197300) FLAME SENSOR: flame: 4095[0m
+[0;32mI (197300) TEMP SENSOR: temp: 533[0m

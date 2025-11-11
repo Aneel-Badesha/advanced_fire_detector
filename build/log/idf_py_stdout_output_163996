@@ -1,0 +1,304 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\fire_detector.elf C:\Espressif\frameworks\esp-idf-v5.5.1\projects\fire_detector\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 10 2025 12:16:19[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1ed38h (126264) map[0m
+[0;32mI (131) esp_image: segment 1: paddr=0002ed60 vaddr=3ffb0000 size=012b8h (  4792) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=a1c84h (662660) map[0m
+[0;32mI (361) esp_image: segment 3: paddr=000d1cac vaddr=3ffb12b8 size=02c84h ( 11396) load[0m
+[0;32mI (366) esp_image: segment 4: paddr=000d4938 vaddr=40080000 size=17e0ch ( 97804) load[0m
+[0;32mI (404) esp_image: segment 5: paddr=000ec74c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (416) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (416) boot: Disabling RNG early entropy source...[0m
+[0;32mI (427) cpu_start: Multicore app[0m
+[0;32mI (435) cpu_start: Pro cpu start user code[0m
+[0;32mI (435) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (435) app_init: Application information:[0m
+[0;32mI (435) app_init: Project name:     fire_detector[0m
+[0;32mI (439) app_init: App version:      v5.5.1[0m
+[0;32mI (443) app_init: Compile time:     Nov 10 2025 12:16:05[0m
+[0;32mI (448) app_init: ELF file SHA256:  4e5e401b9...[0m
+[0;32mI (453) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (457) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (460) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (464) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (468) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (475) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (480) heap_init: At 3FFB8628 len 000279D8 (158 KiB): DRAM[0m
+[0;32mI (485) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (490) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (496) heap_init: At 40097E0C len 000081F4 (32 KiB): IRAM[0m
+[0;32mI (503) spi_flash: detected chip: generic[0m
+[0;32mI (505) spi_flash: flash io: dio[0m
+[0;33mW (508) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (521) main_task: Started on CPU0[0m
+[0;32mI (531) main_task: Calling app_main()[0m
+[0;32mI (531) fire_detector: Fire Detector System Starting...[0m
+[0;32mI (531) fire_detector: System initialized successfully[0m
+[0;32mI (531) fire_detector: Starting sensor read task[0m
+[0;32mI (531) SENSOR: ADC1 unit initialized[0m
+[0;32mI (541) fire_detector: Sending message to raspi[0m
+[1;31mE (541) fire_detector: ESP32 not connected to wifi[0m
+[0;32mI (571) fire_detector: Starting LED flash task on GPIO 2[0m
+[0;32mI (581) wifi:wifi driver task: 3ffc2a20, prio:23, stack:6656, core=0[0m
+[0;32mI (591) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (591) wifi:wifi certification version: v7.0[0m
+[0;32mI (591) wifi:config NVS flash: enabled[0m
+[0;32mI (591) wifi:config nano formatting: disabled[0m
+[0;32mI (601) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (601) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (601) wifi:Init management short buffer num: 32[0m
+[0;32mI (611) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (611) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (621) wifi:Init static rx buffer num: 10[0m
+[0;32mI (621) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (631) wifi_init: rx ba win: 6[0m
+[0;32mI (631) wifi_init: accept mbox: 6[0m
+[0;32mI (631) wifi_init: tcpip mbox: 32[0m
+[0;32mI (631) wifi_init: udp mbox: 6[0m
+[0;32mI (641) wifi_init: tcp mbox: 6[0m
+[0;32mI (641) wifi_init: tcp tx win: 5760[0m
+[0;32mI (641) wifi_init: tcp rx win: 5760[0m
+[0;32mI (641) wifi_init: tcp mss: 1440[0m
+[0;32mI (651) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (651) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (661) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (741) wifi:mode : sta (78:1c:3c:2d:2e:bc)[0m
+[0;32mI (741) wifi:enable tsf[0m
+[0;32mI (741) WIFI: WiFi initialization complete. SSID: BadeshaHome[0m
+[0;32mI (741) WIFI: Raspberry Pi address set to: 192.168.1.90:5000[0m
+[0;32mI (751) WIFI: WiFi started, connecting...[0m
+[0;32mI (761) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (761) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (771) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (781) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (801) wifi:connected with BadeshaHome, aid = 23, channel 11, BW20, bssid = 3c:f0:83:76:5c:12[0m
+[0;32mI (811) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (811) wifi:pm start, type: 1[0m
+
+[0;32mI (811) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (821) wifi:<ba-add>idx:0 (ifx:0, 3c:f0:83:76:5c:12), tid:0, ssn:1, winSize:64[0m
+[0;32mI (831) wifi:<ba-add>idx:1 (ifx:0, 3c:f0:83:76:5c:12), tid:2, ssn:1, winSize:64[0m
+[0;32mI (911) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (1841) esp_netif_handlers: sta ip: 192.168.1.115, mask: 255.255.255.0, gw: 192.168.1.254[0m
+[0;32mI (1841) WIFI: Connected! IP Address: 192.168.1.115[0m
+[0;32mI (4541) flame sensor: Flame Detected, Alarm triggered[0m
+[0;32mI (4751) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (4771) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (4771) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (4771) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (4781) WIFI: HTTP Error[0m
+[1;31mE (4781) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (4781) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (5541) flame sensor: Flame Detected, Alarm triggered[0m
+[0;32mI (5791) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (5811) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (5811) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (5811) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (5811) WIFI: HTTP Error[0m
+[1;31mE (5821) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (5821) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (6831) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (6851) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (6851) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (6851) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (6851) WIFI: HTTP Error[0m
+[1;31mE (6861) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (6861) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (7871) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (7891) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (7891) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (7891) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (7891) WIFI: HTTP Error[0m
+[1;31mE (7901) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (7901) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (8911) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (8921) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (8931) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (8931) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (8931) WIFI: HTTP Error[0m
+[1;31mE (8931) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (8941) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (9941) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (9961) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (9961) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (9961) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (9961) WIFI: HTTP Error[0m
+[1;31mE (9961) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (9971) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (10971) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (10981) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (10991) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (10991) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (10991) WIFI: HTTP Error[0m
+[1;31mE (10991) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (11001) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (12001) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (12011) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (12011) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (12011) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (12021) WIFI: HTTP Error[0m
+[1;31mE (12021) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (12031) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (13031) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (13041) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (13051) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (13051) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (13051) WIFI: HTTP Error[0m
+[1;31mE (13051) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (13061) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (14061) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (14101) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (14101) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (14101) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (14101) WIFI: HTTP Error[0m
+[1;31mE (14111) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (14111) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (15121) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (15151) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (15151) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (15151) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (15151) WIFI: HTTP Error[0m
+[1;31mE (15161) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (15161) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (16171) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (16181) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (16181) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (16181) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (16191) WIFI: HTTP Error[0m
+[1;31mE (16191) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (16201) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (17201) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (17211) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (17221) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (17221) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (17221) WIFI: HTTP Error[0m
+[1;31mE (17221) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (17231) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (18241) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (18251) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (18251) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (18251) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (18261) WIFI: HTTP Error[0m
+[1;31mE (18261) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (18261) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (19271) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (19281) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (19281) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (19281) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (19291) WIFI: HTTP Error[0m
+[1;31mE (19291) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (19301) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (20301) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (20321) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (20321) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (20321) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (20321) WIFI: HTTP Error[0m
+[1;31mE (20331) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (20331) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (21341) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (21351) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (21351) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (21361) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (21361) WIFI: HTTP Error[0m
+[1;31mE (21361) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (21371) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (22371) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (22381) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (22381) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (22381) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (22391) WIFI: HTTP Error[0m
+[1;31mE (22391) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (22391) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (23401) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (23421) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (23421) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (23421) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (23431) WIFI: HTTP Error[0m
+[1;31mE (23431) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (23431) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (24441) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (24451) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (24451) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (24451) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (24461) WIFI: HTTP Error[0m
+[1;31mE (24461) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (24461) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (25471) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (25481) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (25481) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (25481) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (25491) WIFI: HTTP Error[0m
+[1;31mE (25491) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (25491) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (26501) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (26511) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (26511) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (26511) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (26521) WIFI: HTTP Error[0m
+[1;31mE (26521) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (26531) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (27531) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (27541) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (27541) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (27541) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (27551) WIFI: HTTP Error[0m
+[1;31mE (27551) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (27551) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (28561) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (28571) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (28571) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (28571) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (28581) WIFI: HTTP Error[0m
+[1;31mE (28581) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (28581) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (29591) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (29601) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (29601) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (29601) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (29611) WIFI: HTTP Error[0m
+[1;31mE (29611) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (29621) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (30621) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (30631) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (30631) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (30641) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (30641) WIFI: HTTP Error[0m
+[1;31mE (30641) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (30651) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (31651) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (31661) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (31661) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (31661) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (31671) WIFI: HTTP Error[0m
+[1;31mE (31671) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (31681) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (32681) WIFI: Attempting to connect to: http://192.168.1.90:5000/alert[0m
+[1;31mE (32691) esp-tls: [sock=54] delayed connect error: Connection reset by peer[0m
+[1;31mE (32691) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (32691) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (32701) WIFI: HTTP Error[0m
+[1;31mE (32701) WIFI: HTTP POST failed: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (32711) fire_detector: Failed to send message: ESP_ERR_HTTP_CONNECT[0m
