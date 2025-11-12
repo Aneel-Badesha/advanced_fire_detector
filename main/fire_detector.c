@@ -157,7 +157,7 @@ void button_reset_task(void *pvParameter) {
             }
             xSemaphoreGive(mutex); // release mutex
         }
-         
+        
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
