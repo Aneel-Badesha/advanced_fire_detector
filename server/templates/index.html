@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Fire Alarm Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 Fire Alarm Monitor</h1>
+            <p>Real-time fire detection system dashboard</p>
+        </div>
+
+        <div class="dashboard">
+            <div class="status-card" id="statusCard">
+                <div class="status-icon" id="statusIcon">✅</div>
+                <div class="status-title" id="statusTitle">System Normal</div>
+                <div class="status-message" id="statusMessage">All sensors operational</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalAlerts">0</div>
+                    <div class="stat-label">Total Alerts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="todayAlerts">0</div>
+                    <div class="stat-label">Today</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="lastUpdate">--:--</div>
+                    <div class="stat-label">Last Update</div>
+                </div>
+            </div>
+
+            <div class="alerts-section">
+                <h2>Recent Alerts</h2>
+                <div class="alert-list" id="alertList">
+                    <div class="no-alerts">No alerts recorded</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="refresh-indicator" id="refreshIndicator">
+        🔄 Checking for updates...
+    </div>
+
+    <script>
+        let alerts = [];
+        let lastAlertId = 0;
+
+        // Format time
+        function formatTime(date) {
+            return date.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        // Format date for grouping
+        function formatDate(date) {
+            const today = new Date();
+            const alertDate = new Date(date);
+            
+            if (alertDate.toDateString() === today.toDateString()) {
+                return 'Today';
+            }
+            
+            return alertDate.toLocaleDateString('en-US', { 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        // Update status display
+        function updateStatus(hasRecentAlert) {
+            const statusCard = document.getElementById('statusCard');
+            const statusIcon = document.getElementById('statusIcon');
+            const statusTitle = document.getElementById('statusTitle');
+            const statusMessage = document.getElementById('statusMessage');
+
+            if (hasRecentAlert) {
+                statusCard.className = 'status-card alert';
+                statusIcon.textContent = '🚨';
+                statusTitle.textContent = 'FIRE ALERT ACTIVE';
+                statusMessage.textContent = 'Fire detected! Check system immediately!';
+            } else {
+                statusCard.className = 'status-card normal';
+                statusIcon.textContent = '✅';
+                statusTitle.textContent = 'System Normal';
+                statusMessage.textContent = 'All sensors operational';
+            }
+        }
+
+        // Render alerts
+        function renderAlerts() {
+            const alertList = document.getElementById('alertList');
+            
+            if (alerts.length === 0) {
+                alertList.innerHTML = '<div class="no-alerts">No alerts recorded</div>';
+                return;
+            }
+
+            alertList.innerHTML = alerts.map((alert, index) => `
+                <div class="alert-item ${alert.isNew ? 'new' : ''}">
+                    <div class="alert-header">
+                        <span class="alert-sensor">🔥 Sensor: ${alert.sensor}</span>
+                        <span class="alert-time">${formatDate(alert.timestamp)} ${formatTime(new Date(alert.timestamp))}</span>
+                    </div>
+                    <div class="alert-message">${alert.message}</div>
+                </div>
+            `).join('');
+
+            // Remove 'new' class after animation
+            setTimeout(() => {
+                alerts.forEach(alert => alert.isNew = false);
+            }, 500);
+        }
+
+        // Update statistics
+        function updateStats() {
+            const now = new Date();
+            const today = now.toDateString();
+            
+            const todayAlerts = alerts.filter(alert => 
+                new Date(alert.timestamp).toDateString() === today
+            ).length;
+
+            document.getElementById('totalAlerts').textContent = alerts.length;
+            document.getElementById('todayAlerts').textContent = todayAlerts;
+            document.getElementById('lastUpdate').textContent = formatTime(now);
+
+            // Check if there's a recent alert (within last 5 minutes)
+            const recentAlert = alerts.some(alert => 
+                (now - new Date(alert.timestamp)) < 5 * 60 * 1000
+            );
+            
+            updateStatus(recentAlert);
+        }
+
+        // Fetch alerts from server
+        async function fetchAlerts() {
+            try {
+                const indicator = document.getElementById('refreshIndicator');
+                indicator.classList.add('active');
+
+                const response = await fetch('/api/alerts');
+                const data = await response.json();
+
+                if (data.alerts && data.alerts.length > lastAlertId) {
+                    // Add new alerts
+                    const newAlerts = data.alerts.slice(lastAlertId).map(alert => ({
+                        ...alert,
+                        isNew: true
+                    }));
+                    
+                    alerts = [...newAlerts, ...alerts];
+                    lastAlertId = data.alerts.length;
+                    
+                    renderAlerts();
+                    updateStats();
+
+                    // Play alert sound if there are new alerts
+                    if (newAlerts.length > 0) {
+                        playAlertSound();
+                    }
+                }
+
+                setTimeout(() => {
+                    indicator.classList.remove('active');
+                }, 500);
+
+            } catch (error) {
+                console.error('Error fetching alerts:', error);
+            }
+        }
+
+        // Play alert sound (using Web Audio API)
+        function playAlertSound() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+
+        // Initialize
+        fetchAlerts();
+        updateStats();
+
+        // Poll for new alerts every 2 seconds
+        setInterval(fetchAlerts, 2000);
+        
+        // Update time display every second
+        setInterval(() => {
+            document.getElementById('lastUpdate').textContent = formatTime(new Date());
+        }, 1000);
+    </script>
+</body>
+</html>
