@@ -9,7 +9,7 @@ ESP-IDF project for fire detection system that monitors flame sensors using a 5-
 ## Hardware Requirements
 
 - ESP32 development board
-- Flame sensor module (connected to GPIO34 - ADC1_CHANNEL_6)
+- Flame sensor module (GPIO34 - ADC1_CHANNEL_6)
 - Push button for manual alarm reset (GPIO23)
 - LED status indicator (GPIO2)
 - Raspberry Pi 5 running Flask HTTP server on port 5000
